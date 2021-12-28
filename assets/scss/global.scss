@@ -1,0 +1,120 @@
+.visuallyHidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.container {
+  max-width: 780px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--lg {
+    max-width: 960px;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.child {
+  padding-bottom: 5em;
+}
+
+.background--gray {
+  background-color: $base-color-secondary;
+}
+
+.sectionPrimary {
+  padding: 5em 0;
+
+  @include mq() {
+    padding: 7.5em 0;
+  }
+}
+
+.headingPrimary {
+  font-family: $font-ubuntu;
+  font-size: fz(40);
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.button-area {
+  text-align: center;
+  margin-top: 2em;
+
+  @include mq() {
+    margin-top: 2.5em;
+  }
+}
+
+.buttonPrimary {
+  color: $key-color-black;
+  display: inline-block;
+  font-family: $font-ubuntu;
+  font-size: fz(18);
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  text-indent: -1em;
+  line-height: 56px;
+  padding: 0 1em;
+  border: 2px solid;
+  border-radius: 4px;
+  min-width: 230px;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuNzUgNy41MDI0NEwxNSAxMi4wMDAyTDkuNzUgMTYuNTAyNCIgc3Ryb2tlPSIjMDEwMTAxIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=)
+      center no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      transform: translate(5px, -50%);
+    }
+  }
+
+  &--leftArrow {
+    text-indent: 1em;
+
+    &::after {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0LjI1IDcuNTAyNDRMOSAxMi4wMDAyTDE0LjI1IDE2LjUwMjQiIHN0cm9rZT0iIzAxMDEwMSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K);
+      background-size: contain;
+      right: inherit;
+      left: 1em;
+    }
+
+    &:hover {
+      &::after {
+        transform: translate(-5px, -50%);
+      }
+    }
+  }
+}
